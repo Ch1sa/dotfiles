@@ -52,3 +52,8 @@ alias gl='git log --oneline --graph --decorate -20'
 
 # === Powerlevel10k 設定（自動生成、末尾に置く） ===
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# === tmux auto-start ===
+if [[ -z "$TMUX" ]]; then
+    exec tmux new-session -A -s main
+fi
