@@ -60,3 +60,4 @@ keybind = ctrl+shift+down=resize_split:down,20
 # === キーバインド：その他 ===
 # 現在のペインを閉じる
 keybind = ctrl+w=close_surface
+

@@ -57,3 +57,6 @@ alias gl='git log --oneline --graph --decorate -20'
 if [[ -z "$TMUX" ]]; then
     exec tmux new-session -A -s main
 fi
+
+# Ghosttyのタイトルにカレントディレクトリを表示
+precmd() { print -Pn "\e]0;%~\a" }
