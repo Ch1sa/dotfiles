@@ -54,9 +54,13 @@ alias gl='git log --oneline --graph --decorate -20'
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # === tmux auto-start ===
-if [[ -z "$TMUX" ]]; then
-    exec tmux new-session -A -s main
+# tmuxがあれば自動でアタッチ。失敗時は素のzshにフォールバック。
+# SSH接続時・VS Codeターミナル時は自動起動しない(二重起動回避)
+if [[ -z "$TMUX" ]] && [[ -z "$SSH_TTY" ]] && [[ -z "$VSCODE_INJECTION" ]] && command -v tmux >/dev/null 2>&1; then
+  tmux new-session -A -s main && exit
 fi
 
-# Ghosttyのタイトルにカレントディレクトリを表示
-precmd() { print -Pn "\e]0;%~\a" }
+# === Ghosttyタイトル表示(カレントディレクトリ) ===
+_ghostty_title() { print -Pn "\e]0;%~\a" }
+autoload -Uz add-zsh-hook
+add-zsh-hook precmd _ghostty_title
