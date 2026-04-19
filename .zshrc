@@ -64,3 +64,15 @@ fi
 _ghostty_title() { print -Pn "\e]0;%~\a" }
 autoload -Uz add-zsh-hook
 add-zsh-hook precmd _ghostty_title
+alias fd=fdfind
+
+# === yazi: ファイルマネージャ起動&終了時に選択ディレクトリへcd ===
+function y() {
+  local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd
+  yazi "$@" --cwd-file="$tmp"
+  if cwd="$(command cat -- "$tmp")" && [ -n "$cwd" ] && [ "$cwd" != "$PWD" ]; then
+    builtin cd -- "$cwd"
+  fi
+  rm -f -- "$tmp"
+}
+export PATH="$HOME/.local/bin:$PATH"
