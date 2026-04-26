@@ -52,5 +52,3 @@ keybind = ctrl+shift+down=unbind
 # 現在のペインを閉じる
 keybind = ctrl+w=close_surface
 
-# === tmux dev-layout自動起動 (左: shell / 右: claude) ===
-command = /home/user/.local/bin/dev-layout
