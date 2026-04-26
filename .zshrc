@@ -76,3 +76,6 @@ function y() {
   rm -f -- "$tmp"
 }
 export PATH="$HOME/.local/bin:$PATH"
+
+# cでchrome開く add 2026-04-19
+alias c='google-chrome & disown'
