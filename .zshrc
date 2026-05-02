@@ -1,3 +1,4 @@
+typeset -g POWERLEVEL9K_INSTANT_PROMPT=quiet
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -57,7 +58,7 @@ alias gl='git log --oneline --graph --decorate -20'
 # tmuxがあれば自動でアタッチ。失敗時は素のzshにフォールバック。
 # SSH接続時・VS Codeターミナル時は自動起動しない(二重起動回避)
 if [[ -z "$TMUX" ]] && [[ -z "$SSH_TTY" ]] && [[ -z "$VSCODE_INJECTION" ]] && command -v tmux >/dev/null 2>&1; then
-  tmux new-session -A -s main && exit
+  tmux new-session -A -s main 2>/dev/null && exit
 fi
 
 # === Ghosttyタイトル表示(カレントディレクトリ) ===
@@ -79,3 +80,4 @@ export PATH="$HOME/.local/bin:$PATH"
 
 # cでchrome開く add 2026-04-19
 alias c='google-chrome & disown'
+alias waybar='waybar > /dev/null 2>&1 &'
