@@ -1,0 +1,72 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 36,
+    "modules-left": ["hyprland/workspaces", "custom/www", "custom/file", "custom/term", "custom/code"],
+    "modules-center": ["clock"],
+    "modules-right": ["network", "bluetooth", "pulseaudio", "custom/keyboard", "battery", "custom/power"],
+
+    "hyprland/workspaces": {
+        "format": "{id}",
+        "on-click": "activate"
+    },
+    "clock": {
+        "format": "{:%Y-%m-%d  %H:%M}",
+        "tooltip": false
+    },
+    "custom/www": {
+        "format": "󰖟 www",
+        "on-click": "google-chrome-stable",
+        "tooltip": false
+    },
+    "custom/file": {
+        "format": "󰝰 file",
+        "on-click": "nautilus",
+        "tooltip": false
+    },
+    "custom/term": {
+        "format": "󰆍 term",
+        "on-click": "ghostty -e tmux new-session -A -s main",
+        "tooltip": false
+    },
+    "custom/code": {
+        "format": "󰨞 code",
+        "on-click": "cursor",
+        "tooltip": false
+    },
+    "network": {
+        "format-wifi": "󰤨 {essid}",
+        "format-ethernet": "󰈀  {ipaddr}",
+        "format-disconnected": "󰤭 off",
+        "tooltip": false
+    },
+    "bluetooth": {
+        "format": "󰂯",
+        "format-connected": "󰂱",
+        "format-disabled": "󰂲",
+        "tooltip": false,
+        "on-click": "blueman-manager"
+    },
+    "pulseaudio": {
+        "format": "󰕾  {volume}%",
+        "format-muted": "󰖁  muted",
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "custom/keyboard": {
+        "exec": "fcitx5-remote -n | grep -q mozc && echo '󰌌 JP' || echo '󰌌 EN'",
+        "interval": 1,
+        "tooltip": false,
+        "on-click": "fcitx5-remote -t"
+    },
+    "battery": {
+        "format": "󰁹  {capacity}%",
+        "format-charging": "󰂄  {capacity}%",
+        "tooltip": false
+    },
+    "custom/power": {
+        "format": "⏻",
+        "on-click": "wlogout",
+        "tooltip": false
+    }
+}

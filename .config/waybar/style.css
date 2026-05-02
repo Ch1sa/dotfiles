@@ -1,0 +1,135 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "MesloLGS NF", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background-color: rgba(10, 10, 15, 0.95);
+    color: #ffffff;
+}
+
+#workspaces button {
+    padding: 0 8px;
+    color: #444466;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #00ffff;
+    border-bottom: 2px solid #00ffff;
+    text-shadow: 0 0 8px #00ffff;
+}
+
+#workspaces button:hover {
+    color: #00ffff;
+    background: rgba(0, 255, 255, 0.08);
+}
+
+#custom-www {
+    padding: 0 10px;
+    color: #ff6ec7;
+    text-shadow: 0 0 8px #ff6ec7;
+    border-bottom: 2px solid #ff6ec7;
+}
+
+#custom-file {
+    padding: 0 10px;
+    color: #ffaa00;
+    text-shadow: 0 0 8px #ffaa00;
+    border-bottom: 2px solid #ffaa00;
+}
+
+#custom-term {
+    padding: 0 10px;
+    color: #00ff9f;
+    text-shadow: 0 0 8px #00ff9f;
+    border-bottom: 2px solid #00ff9f;
+}
+
+#custom-code {
+    padding: 0 10px;
+    color: #7df9ff;
+    text-shadow: 0 0 8px #7df9ff;
+    border-bottom: 2px solid #7df9ff;
+}
+
+#custom-www:hover,
+#custom-file:hover,
+#custom-term:hover,
+#custom-code:hover {
+    background: rgba(255, 255, 255, 0.06);
+}
+
+#clock {
+    color: #ffe66d;
+    font-weight: bold;
+    text-shadow: 0 0 8px #ffe66d;
+    border-bottom: 2px solid #ffe66d;
+}
+
+#network {
+    padding: 0 10px;
+    color: #00ff9f;
+    border-bottom: 2px solid #00ff9f;
+}
+
+#bluetooth {
+    padding: 0 10px;
+    color: #7df9ff;
+    border-bottom: 2px solid #7df9ff;
+}
+
+#pulseaudio {
+    padding: 0 10px;
+    color: #ffaa00;
+    border-bottom: 2px solid #ffaa00;
+}
+
+#pulseaudio.muted {
+    color: #c77dff;
+    border-bottom: 2px solid #c77dff;
+}
+
+#custom-keyboard {
+    padding: 0 10px;
+    color: #ff6ec7;
+    border-bottom: 2px solid #ff6ec7;
+}
+
+#battery {
+    padding: 0 10px;
+    color: #00ff9f;
+    border-bottom: 2px solid #00ff9f;
+}
+
+#battery.charging {
+    color: #ffe66d;
+    text-shadow: 0 0 8px #ffe66d;
+    border-bottom: 2px solid #ffe66d;
+}
+
+#battery.warning:not(.charging) {
+    color: #ff4444;
+    text-shadow: 0 0 8px #ff4444;
+    border-bottom: 2px solid #ff4444;
+}
+
+#custom-power {
+    padding: 0 12px;
+    color: #ff4444;
+    font-size: 15px;
+    text-shadow: 0 0 8px #ff4444;
+    border-bottom: 2px solid #ff4444;
+}
+
+#custom-power:hover {
+    color: #ff0000;
+    background: rgba(255, 0, 0, 0.15);
+}
+
+#tray {
+    padding: 0 8px;
+}
