@@ -79,7 +79,7 @@ function y() {
 export PATH="$HOME/.local/bin:$PATH"
 
 # cでchrome開く add 2026-04-19
-alias c='google-chrome & disown'
+alias c='google-chrome-stable & disown'
 alias waybar='waybar > /dev/null 2>&1 &'
 
 # === yazi: 終了時にcwdを引き継ぐ ===
